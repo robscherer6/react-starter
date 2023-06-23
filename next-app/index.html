@@ -17,7 +17,40 @@
 
     const app = document.getElementById('app');
 
-    ReactDOM.render(<h1>Develop. Preview. Ship. 🚀</h1>, app);
+    function Header ({ title }) {
+      return (
+        <div>
+          <h1>Develop. Preview. Ship that shit. 🚀</h1>
+          <h2>{ title ? title : 'Default Title' }</h2>
+        </div>
+        )
+    }
+
+    function alertHello () {
+      alert('Hello!')
+      console.log('increment like count');
+    }
+
+    function HomePage() {
+      
+      const [likes, setLikes] = React.useState(0);
+
+      const names = ['Brandon', 'Atlas', 'Vanessa', 'Julie'];
+
+      return (
+        <div>
+          <Header title="Hello World 💙" />
+          <ul>
+            {names.map((name) => (
+              <li key={name}>{name}</li>
+            ))}
+          </ul>
+          <button onClick={alertHello}>Like</button>
+        </div>
+      )
+    }
+
+    ReactDOM.render(<HomePage />, app);
 
   </script>
 </body>
