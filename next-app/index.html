@@ -26,14 +26,14 @@
         )
     }
 
-    function alertHello () {
-      alert('Hello!')
-      console.log('increment like count');
-    }
 
     function HomePage() {
-      
+
       const [likes, setLikes] = React.useState(0);
+
+      function alertHello () {
+        setLikes(likes + 1);
+      }
 
       const names = ['Brandon', 'Atlas', 'Vanessa', 'Julie'];
 
@@ -45,7 +45,7 @@
               <li key={name}>{name}</li>
             ))}
           </ul>
-          <button onClick={alertHello}>Like</button>
+          <button onClick={alertHello}>Likes ({likes})</button>
         </div>
       )
     }
