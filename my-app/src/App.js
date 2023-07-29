@@ -1,4 +1,5 @@
 import './App.css';
+import Counter from './components/Counter'
 
 function MyButton() {
   return (
@@ -27,6 +28,7 @@ function MyApp() {
           height: user.imageSize
         }}
       />
+      <Counter />
     </div>
    );
 }
